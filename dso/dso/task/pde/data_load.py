@@ -61,10 +61,10 @@ def load_data(dataset,noise_level=0, data_amount = 1, training=False,cut_ratio =
         if noise_level>0:
             data = np.load(noise_path)
             u = data['U_pred'].T
-            data = scio.loadmat('./dso/task/pde/data_new/Kdv.mat')
+            data = scio.loadmat('/tmp/discover/dso/dso/task/pde/data_new/Kdv.mat')
         else: 
             
-            data = scio.loadmat('./dso/task/pde/data_new/Kdv.mat')
+            data = scio.loadmat('/tmp/discover/dso/dso/task/pde/data_new/Kdv.mat')
             u=data.get("uu")
         n,m=u.shape
         x=np.squeeze(data.get("x")).reshape(-1,1)
